@@ -1,0 +1,38 @@
+[
+  {
+    "mark":"Toyota",
+    "model":"Corolla",
+    "price":"2000000",
+    "year":"2021",
+    "engine_capacity":"1,6"
+  },
+  {
+    "mark":"Porsche",
+    "model":"911 Carrera",
+    "price":"1900000",
+    "year":"2022",
+    "engine_capacity":"3,6"
+  },
+  {
+    "mark":"Lexus",
+    "model":"RX",
+    "price":"7100000",
+    "year":"2022",
+    "engine_capacity":"2,5"
+  },
+  {
+    "mark":"Honda",
+    "model":"Civic",
+    "price":"1850000",
+    "year":"2021",
+    "engine_capacity":"2,0"
+  },
+  {
+    "mark":"Nissan",
+    "model":"Skyline",
+    "price":"595 000",
+    "year":"1993",
+    "engine_capacity":"2,5"
+  }
+]
+

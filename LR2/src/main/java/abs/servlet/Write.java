@@ -18,7 +18,7 @@ import com.google.gson.reflect.TypeToken;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mysql.cj.jdbc.Driver; // Класс для установления подключения к БД
+import com.mysql.cj.jdbc.Driver; 
 
 @WebServlet("/main")
 public class Write extends HttpServlet {
@@ -53,10 +53,9 @@ public class Write extends HttpServlet {
                 series.getengine_capacity());
         try {
             Statement statement = connection.createStatement();
-            statement.executeUpdate(query); // Выполнение SQL инструкции
+            statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
 }

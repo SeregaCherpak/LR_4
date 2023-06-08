@@ -38,6 +38,7 @@ public class Car {
         result = 31 * result + model.hashCode();
         result = 31 * result + price.hashCode();
         result = 31 * result + year.hashCode();
+        result = 31 * result + idInDatabase;
         return result;
     }
 }

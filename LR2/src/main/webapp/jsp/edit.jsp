@@ -16,7 +16,7 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
             crossorigin="anonymous"></script>
-    <script src="js/getForEdit1.js"></script>
+    <script src="js/edit.js"></script>
 
 </head>
 <body>
@@ -50,11 +50,11 @@
 <div>
     <form class="w-50 p-5 shadow rounded text-center position-absolute top-50 start-50 translate-middle row">
         <p class="font-weight-bold">Редактировать запись</p>
-        <input class="mt-2 rounded" id="name" type="text" placeholder="Марка" value="<%=((Car) request.getAttribute("series")).getmark()%>">
-        <input class="mt-2 rounded" id="main_color" type="text" placeholder=Модель value="<%=((Car) request.getAttribute("series")).getmodel()%>">
-        <input class="mt-2 rounded" id="family" type="text" placeholder="Цена" value="<%=((Car) request.getAttribute("series")).getprice()%>">
-        <input class="mt-2 rounded" id="height" type="number" placeholder="Год" value="<%=((Car) request.getAttribute("series")).getyear()%>">
-        <input class="mt-2 rounded" id="price" type="number" placeholder="Объем двигателя" value="<%=((Car) request.getAttribute("series")).getengine_capacity()%>">
+        <input class="mt-2 rounded" id="name" type="text" placeholder="Марка" value="<%=((Car) request.getAttribute("Car")).getmark()%>">
+        <input class="mt-2 rounded" id="main_color" type="text" placeholder=Модель value="<%=((Car) request.getAttribute("Car")).getmodel()%>">
+        <input class="mt-2 rounded" id="family" type="text" placeholder="Цена" value="<%=((Car) request.getAttribute("Car")).getprice()%>">
+        <input class="mt-2 rounded" id="height" type="number" placeholder="Год" value="<%=((Car) request.getAttribute("Car")).getyear()%>">
+        <input class="mt-2 rounded" id="price" type="number" placeholder="Объем двигателя" value="<%=((Car) request.getAttribute("Car")).getengine_capacity()%>">
         <button type="button" class="btn btn-success mt-2 rounded" onclick="sendEditedCar()">Сохранить</button>
     </form>
 </div>

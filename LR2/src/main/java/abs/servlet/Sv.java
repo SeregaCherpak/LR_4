@@ -18,14 +18,13 @@ import com.mysql.cj.jdbc.Driver;
 @WebServlet("/Sv")
 public class Sv {
     Connection connection;
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext sc = getServletContext();
         try {
-            Driver driver = new com.mysql.cj.jdbc.Driver(); // Драйвер для подключения к MySQL
-            DriverManager.registerDriver(driver); // Указание диспетчеру драйверов какой драйвер загружается
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:8080/servlet_war", "root", ""); // Установление соединения с БД
+            Driver driver = new com.mysql.cj.jdbc.Driver();
+            DriverManager.registerDriver(driver);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:8080/servlet_war", "root", ""); 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
             } catch (ClassNotFoundException e) {
@@ -37,7 +36,7 @@ public class Sv {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String data = request.getReader().readLine();
         Car car = gson.fromJson(data, Car.class);
-        String query = String.format("update car set mark='%s', model='%s', price='%s', year='%s', engine_capacity='%d'",
+        String query = String.format("update car set mark='%s', model='%s', price='%s', year='%s', engine_capacity='%s'",
                 car.getmark(),
                 car.getmodel(),
                 car.getprice(),
@@ -46,7 +45,7 @@ public class Sv {
                 car.getIdInDatabase());
         try {
             Statement statement = connection.createStatement();
-            statement.executeUpdate(query); // Выполнение SQL инструкции
+            statement.executeUpdate(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

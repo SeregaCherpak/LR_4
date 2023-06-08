@@ -16,6 +16,7 @@ public class Car {
         this.price = price;
         this.year = year;
         this.engine_capacity = engine_capacity;
+        this.idInDatabase = idInDatabase;
     }
     @Override
     public boolean equals(Object obj) {

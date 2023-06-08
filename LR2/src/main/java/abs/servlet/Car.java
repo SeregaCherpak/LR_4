@@ -27,7 +27,7 @@ public class Car {
         if (!model.equals(res.model)) return false;
         if (!price.equals(res.price)) return false;
         if (!year.equals(res.year)) return false;
-        return  engine_capacity == res.engine_capacity;
+        if (idInDatabase != series.idInDatabase) return false;
     }
 
     @Override

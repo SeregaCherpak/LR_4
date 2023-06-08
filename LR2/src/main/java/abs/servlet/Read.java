@@ -12,8 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mysql.cj.jdbc.Driver; // Класс для установления подключения к БД
-
+import com.mysql.cj.jdbc.Driver; 
 @WebServlet("/list")
 public class Read extends HttpServlet {
     private Connection connection;

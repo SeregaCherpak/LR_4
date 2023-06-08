@@ -21,9 +21,9 @@ public class Edit {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext sc = getServletContext();
         try {
-            Driver driver = new com.mysql.cj.jdbc.Driver(); // Драйвер для подключения к MySQL
-            DriverManager.registerDriver(driver); // Указание диспетчеру драйверов какой драйвер загружается
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:8080/servlet_war", "root", ""); // Установление соединения с БД
+            Driver driver = new com.mysql.cj.jdbc.Driver(); 
+            DriverManager.registerDriver(driver); 
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:8080/servlet_war", "root", ""); 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
             } catch (ClassNotFoundException e) {
@@ -35,7 +35,7 @@ public class Edit {
         String query = String.format("select * from series where mark=" + request.getParameter("mark"));
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(query); // Выполнение SQL инструкции
+            ResultSet resultSet = statement.executeQuery(query);
             if (resultSet.next()) {
                 Car car = new Car(resultSet.getString("mark"),
                         resultSet.getString("model"),
